@@ -1,2 +1,14 @@
+@import './utils/fonts';
+@import './utils/variebles';
+@import './base/normalize';
 @import './common';
-@import './example';
+@import './components/button';
+@import './components/header';
+@import './pages/main/hero';
+@import './pages/main/what-we-do';
+@import './pages/main/about-us';
+@import './pages/main/completed-work';
+@import './pages/main/testimonials';
+@import './pages/main/letest-news';
+@import './pages/main/dont-forget';
+@import './components/footer';
