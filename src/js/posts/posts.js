@@ -19,16 +19,11 @@ btnListEl.addEventListener('click', e => {
 
     const userId = clickEl.getAttribute('userId');
     const localStorsgePosts = getLocalStorageUsersPosts();
-    if (changeBtn !== 'all' && changeBtn === userId) {
+
+    if (userId === 'all' || changeBtn === userId) {
       const posts = localStorsgePosts.map(item => item[0]);
       renderPosts(createPosts(posts));
       changeBtn = 'all';
-      return;
-    }
-
-    if (userId === 'all') {
-      const posts = localStorsgePosts.map(item => item[0]);
-      renderPosts(createPosts(posts));
       return;
     }
     for (const userPosts of localStorsgePosts) {
@@ -38,7 +33,6 @@ btnListEl.addEventListener('click', e => {
         });
         renderPosts(createPosts(posts[0]));
         changeBtn = userId;
-
         return;
       }
     }

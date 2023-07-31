@@ -1,5 +1,6 @@
 import { validateWord } from './validateWord';
 import { saveLocalStorage } from './saveLocalStorage';
+import { showAction } from './actions';
 const formEl = document.querySelector('.forget__form');
 
 formEl.addEventListener('submit', onSubmitForm);
@@ -17,6 +18,10 @@ function onSubmitForm(e) {
       validateWord(key, data[key]) ? '' : (data.validly = false);
     }
   }
-  data.validly ? saveLocalStorage(data) : '';
+  if (data.validly) {
+    saveLocalStorage(data);
+    if (data.name === 'Sigma') {
+      showAction();
+    }
+  }
 }
-
